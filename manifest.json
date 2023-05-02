@@ -2,6 +2,9 @@
     "name": "Astro extension",
     "version": "1.0.0",
     "manifest_version": 3,
-    "description" : "C'est une extension de page d'accueil Chrome avec son horoscope du jour"
-
+    "description" : "C'est une extension de page d'accueil Chrome avec son horoscope du jour",
+    "chrome_url_overrides" : {
+        "newtab":"index.html"
+    },
+    "permissions" :["storage"]
 }
