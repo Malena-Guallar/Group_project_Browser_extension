@@ -21,9 +21,23 @@
                 </div><br>
                 <div>
                     <label for="signe">Votre signe astrologique : </label><br>
-                    <input type="text" name="signe" id="signe" required>     
+                        <select id="signe">
+                            <option value="">~ Choissisez votre signe ~</option>
+                            <option value="belier">Bélier</option>
+                            <option value="taureau">Taureau</option>
+                            <option value="gemeaux">Gémeaux</option>
+                            <option value="cancer">Cancer</option>
+                            <option value="lion">Lion</option>
+                            <option value="vierge">Vierge</option>
+                            <option value="balance">Balance</option>
+                            <option value="scorpion">Scorpion</option>
+                            <option value="sagittaire">Sagittaire</option>
+                            <option value="capricorne">Capricorne</option>
+                            <option value="verseau">Verseau</option>
+                            <option value="poisson">Poisson</option>
+                        </select>     
                 </div><br>
-                <button id="button" onclick="valider">Envoyer</button>
+                <button id="button" onclick="valider">Valider</button>
             </form>
         </div>
     </main>
