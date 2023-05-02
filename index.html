@@ -14,7 +14,7 @@
 
     <main>
         <div class="form_input">
-            <form action="">
+            <form action="" id="form">
                 <div>
                     <label for="name">Votre prénom : </label><br>
                     <input type="text" name="name" id="name" required>
@@ -37,8 +37,17 @@
                             <option value="poisson">Poisson</option>
                         </select>     
                 </div><br>
-                <button id="button" onclick="valider">Valider</button>
+                <button type="submit" id="button">Envoyer</button>
             </form>
+        </div>
+
+        <div id="welcome">
+            <script src="login.js"></script>
+
+        </div>
+
+        <div id="horoscope">
+            <p>salut voici ton horoscope</p>
         </div>
     </main>
 
