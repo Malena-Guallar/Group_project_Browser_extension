@@ -1,4 +1,12 @@
-const name = document.getElementById('name');
-const signe = document.getElementById('signe');
-const button = document.getElementById('button');
+document.getElementById("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let name = document.getElementById("name").value;
+    let form = document.getElementById("form");
+    let horoscope = document.getElementById("horoscope")
 
+    document.getElementById("welcome").textContent = "Bonjour " + name;
+    form.style.display = "none" ;
+    horoscope.style.display = "block"; 
+
+
+});
