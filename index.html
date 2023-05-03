@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css"/>
     <title>New Tab Astro</title>
   </head>
+
   <body>
     <header>
       <script src="header.js"></script>
       <p>kikoo</p>
     </header>
 
-    <main>
+    <main id="mainpage">
+     
         <div class="form_input">
             <form action="" id="form">
                 <div>
@@ -41,12 +44,12 @@
             </form>
         </div>
 
-        <div id="welcome">
+        <div id="welcome" class="hidden">
             <script src="login.js"></script>
 
         </div>
 
-        <div id="horoscope">
+        <div id="horoscope" class="hidden">
             <p>salut voici ton horoscope</p>
         </div>
     </main>
