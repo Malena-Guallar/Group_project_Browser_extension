@@ -5,3 +5,7 @@ body {
 #horoscope {
     display: none;
 }
+
+.horoscope_container{
+    border : 2px black solid; 
+}
