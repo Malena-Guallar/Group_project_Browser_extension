@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>New Tab Astro</title>
   </head>
 
@@ -20,6 +20,7 @@
     </header>
 
     <main>
+      
       <div class="form_input">
         <form action="" id="form">
           <div>
@@ -28,21 +29,22 @@
           </div>
           <br />
           <div>
+            
             <label for="signe">Votre signe astrologique : </label><br />
             <select id="signe">
               <option value="">~ Choissisez votre signe ~</option>
-              <option value="belier">Bélier</option>
-              <option value="taureau">Taureau</option>
-              <option value="gemeaux">Gémeaux</option>
+              <option value="aries">Aries</option>
+              <option value="taurus">Taurus</option>
+              <option value="gemini">Gemini</option>
               <option value="cancer">Cancer</option>
-              <option value="lion">Lion</option>
-              <option value="vierge">Vierge</option>
-              <option value="balance">Balance</option>
-              <option value="scorpion">Scorpion</option>
-              <option value="sagittaire">Sagittaire</option>
-              <option value="capricorne">Capricorne</option>
-              <option value="verseau">Verseau</option>
-              <option value="poisson">Poisson</option>
+              <option value="leo">Leo</option>
+              <option value="virgo">Virgo</option>
+              <option value="libra">Libra</option>
+              <option value="scorpio">Scorpio</option>
+              <option value="sagittarius">Sagittarius</option>
+              <option value="capricorn">Capricorn</option>
+              <option value="acquarius">Acquarius</option>
+              <option value="pisces">Pisces</option>
             </select>
           </div>
           <br />
@@ -55,8 +57,14 @@
       </div>
 
       <div id="horoscope">
+        
         <p>salut voici ton horoscope</p>
+        <div class="horoscope_container" id="horoscope_container">
+        
+        </div>
       </div>
     </main>
   </body>
+  <script type="text/javascript" src="horoscope.js"></script>
+
 </html>
