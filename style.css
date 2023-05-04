@@ -1,9 +1,11 @@
 body {
     background-color: antiquewhite;
+    justify-content: center;
 }
 
-#horoscope {
+.horoscope {
     display: none;
+    text-align: center;
 }
 
 .horoscope_container{
@@ -15,4 +17,6 @@ body {
 
 }
 
-#welcome
+.welcome{
+    text-align: center;
+}
