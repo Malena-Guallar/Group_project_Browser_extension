@@ -16,7 +16,6 @@ if (day < 10){
     day = "0" + day
 }
 let currentDate = `${month}-${day}-${year}`;
-console.log(currentDate)
 
 // Ici on crée une fonction asynchrone qui va, dans un premier temps, récupérer la valeur choisie par l'utilisateur avec l'event listener, puis mettre cette valeur dans l'url 
 // pour que la requête soit faite correctement. Idem avec la date au bon format.
