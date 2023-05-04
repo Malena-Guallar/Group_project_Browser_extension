@@ -8,12 +8,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
     document.getElementById("welcome").textContent = "Bonjour " + name;
     form.style.display = "none";
     horoscope.style.display = "block";
-    localStorage.getItem("name", name);
+    localStorage.setItem("name", name);
 });
 
-if(localStorage.getItem("name", "signe") != null) {
-    form.style.display = "none" ;
-    horoscope.style.display = "block";
-    }
+// if(localStorage.getItem("name", "signe") != null) {
+//     form.style.display = "none" ;
+//     horoscope.style.display = "block";
+//     }
 
 // if localStorage est rempli alors on cache le formulaire 
