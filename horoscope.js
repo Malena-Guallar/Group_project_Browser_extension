@@ -16,7 +16,6 @@ if (day < 10){
     day = "0" + day
 }
 let currentDate = `${month}-${day}-${year}`;
-console.log(currentDate)
 
 // Ici on crée une fonction asynchrone qui va, dans un premier temps, récupérer la valeur choisie par l'utilisateur avec l'event listener, puis mettre cette valeur dans l'url 
 // pour que la requête soit faite correctement. Idem avec la date au bon format.
@@ -26,12 +25,10 @@ signList.addEventListener('change', async function() {
     const sign = this.value;
 
     const apiUrl = `https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?token=mmEUtLATc8w_UNnHuR2&sign=${sign}&date=${currentDate}` ;
-    console.log('la full api ' + apiUrl);
     
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log(data);
         displayHoro(data);
         stockageSign(sign);
 
@@ -80,6 +77,7 @@ function displayHoro(data){
 
 
 let form = document.getElementById("form");
+let nameFromStorage = ""
 
 document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -88,11 +86,16 @@ document.getElementById("form").addEventListener("submit", function(event) {
     // localStorage.setItem("signe", signe.value);
     document.getElementById("welcome").textContent = "Bonjour " + name;
     form.style.display = "none";
-    console.log("coucou")
     horoscope.style.display = "block";
-    console.log("yo")
     stockageName(name)
+    nameFromStorage = localStorage.getItem("name")
+    console.log("inside function " + nameFromStorage)
+    return nameFromStorage ; 
 });
+
+console.log("outside function " + nameFromStorage)
+// faire une fonction async avec le onClick
+
 
 // if(localStorage.getItem("name", "signe") != null) {
 //     form.style.display = "none" ;
@@ -101,11 +104,15 @@ document.getElementById("form").addEventListener("submit", function(event) {
 
 // if localStorage est rempli alors on cache le formulaire 
 
+
+
 const stockageName = (name) => {
     localStorage.setItem("name", name)
 }
 
+
+
 const stockageSign = (sign) => {
     localStorage.setItem("sign", sign)
-}
 
+}
