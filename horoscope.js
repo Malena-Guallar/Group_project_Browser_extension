@@ -32,12 +32,17 @@ signList.addEventListener('change', async function() {
         const response = await fetch(apiUrl);
         const data = await response.json();
         console.log(data);
-        displayHoro(data)
-    } 
+        displayHoro(data);
+        stockageSign(sign);
+
+
+    }  
+
     catch (error) {
         console.log(error)
-    }
+    } 
 });
+
 
 
 
@@ -49,8 +54,8 @@ function displayHoro(data){
     para.innerHTML = horoscope;
     horoscopeDiv.appendChild(para)
 
-    document.getElementById("welcome").textContent = "Bonjour " + name;
-    localStorage.getItem("signe", signe);
+    // document.getElementById("welcome").textContent = "Bonjour " + name;
+    // localStorage.getItem("signe", signe);
     
     // prendre le nom 
     // on prend la div welcome avec un getElemntByID
@@ -72,3 +77,35 @@ function displayHoro(data){
 
 
 // La fonction displayHoro permet d'afficher le résultat de la requête sur la page HTML avec le DOM. 
+
+
+let form = document.getElementById("form");
+
+document.getElementById("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let name = document.getElementById("name").value;
+    let horoscope = document.getElementById("horoscope")
+    // localStorage.setItem("signe", signe.value);
+    document.getElementById("welcome").textContent = "Bonjour " + name;
+    form.style.display = "none";
+    console.log("coucou")
+    horoscope.style.display = "block";
+    console.log("yo")
+    stockageName(name)
+});
+
+// if(localStorage.getItem("name", "signe") != null) {
+//     form.style.display = "none" ;
+//     horoscope.style.display = "block";
+//     }
+
+// if localStorage est rempli alors on cache le formulaire 
+
+const stockageName = (name) => {
+    localStorage.setItem("name", name)
+}
+
+const stockageSign = (sign) => {
+    localStorage.setItem("sign", sign)
+}
+
