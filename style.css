@@ -1,0 +1,18 @@
+body {
+    background-color: antiquewhite;
+}
+
+#horoscope {
+    display: none;
+}
+
+.horoscope_container{
+    border : 2px black solid; 
+    justify-content: center;
+    padding: 3%;
+    text-align:center;
+    margin: 10%;
+
+}
+
+#welcome
