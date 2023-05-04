@@ -48,6 +48,15 @@ function displayHoro(data){
     let para = document.createElement("p");
     para.innerHTML = horoscope;
     horoscopeDiv.appendChild(para)
+
+    document.getElementById("welcome").textContent = "Bonjour " + name;
+    localStorage.getItem("signe", signe);
+    
+    // prendre le nom 
+    // on prend la div welcome avec un getElemntByID
+    // créer une variable epour insérer un paragraphe 
+    // la variable paragraphe on va l'insérer dans la div welcome avec un appendChild
+
 }
 
 // Requête à l'API pour obtenir l'horoscope. On transforme la réponse en format json, puis on met cette réponse dans une fonction displayHoro,
