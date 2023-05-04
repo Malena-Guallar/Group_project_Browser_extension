@@ -10,7 +10,13 @@
 
   <body>
     <header>
-      <p>kikoo</p>
+      <div id="clock"></div>
+      <div id="meteo">
+      <div id="temp"></div>
+      <div id="ville"></div>
+      <img id="icon">
+      </div>
+      <script src="header.js"></script>
     </header>
 
     <main>
@@ -18,15 +24,15 @@
       <div class="form_input">
         <form action="" id="form">
           <div>
-            <label for="name">Votre prénom : </label><br />
+            <label class="name_label" for="name">Votre prénom </label><br />
             <input type="text" name="name" id="name" required />
           </div>
           <br />
           <div>
             
-            <label for="signe">Votre signe astrologique : </label><br />
+            <label class="sign_label" for="signe">Votre signe astrologique </label><br />
             <select id="signe">
-              <option value="">~ Choissisez votre signe ~</option>
+              <option value="">Choisissez votre signe</option>
               <option value="aries">Aries</option>
               <option value="taurus">Taurus</option>
               <option value="gemini">Gemini</option>
@@ -37,7 +43,7 @@
               <option value="scorpio">Scorpio</option>
               <option value="sagittarius">Sagittarius</option>
               <option value="capricorn">Capricorn</option>
-              <option value="acquarius">Acquarius</option>
+              <option value="aquarius">Aquarius</option>
               <option value="pisces">Pisces</option>
             </select>
           </div>
@@ -52,7 +58,7 @@
 
         <div id="horoscope" class="horoscope">
           
-          <p>salut voici ton horoscope</p>
+          <p>horoscope du jour</p>
           <div class="horoscope_container" id="horoscope_container">
           
           </div>
