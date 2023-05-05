@@ -1,9 +1,6 @@
 // AFFICHAGE DE L'HOROSCOPE SUR LA PAGE
 
 
-const signList = document.querySelector('select');
-
-
 // Récupérer la date du jour et la mettre au bon format pour la requête API mm-jj-aaaa
 const date = new Date();
 let day = date.getDay();
@@ -20,21 +17,18 @@ let currentDate = `${month}-${day}-${year}`;
 // Ici on crée une fonction asynchrone qui va, dans un premier temps, récupérer la valeur choisie par l'utilisateur avec l'event listener, puis mettre cette valeur dans l'url 
 // pour que la requête soit faite correctement. Idem avec la date au bon format.
 // Ensuite on donne les instructions avec le await -> faire la requête puis afficher dans la page les données récupérées, avec la fonction displayHoro. 
+// Une fois que la fonction a récupéré le signe astro, on l'envoie dans une autre fonction pour le stocker dans le local storage.
 
+const signList = document.querySelector('select');
 signList.addEventListener('change', async function() {
     const sign = this.value;
-
     const apiUrl = `https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?token=mmEUtLATc8w_UNnHuR2&sign=${sign}&date=${currentDate}` ;
-    console.log('la full api ' + apiUrl);
     
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log(data);
         displayHoro(data);
         stockageSign(sign);
-
-
     }  
 
     catch (error) {
@@ -42,8 +36,33 @@ signList.addEventListener('change', async function() {
     } 
 });
 
+const stockageSign = (sign) => {
+    localStorage.setItem("sign", sign)
+}
+
+// La fonction ci-dessous va permettre de récupérer le nom de l'utilisateurice quand iel aura cliqué sur 'envoyer'
+// Avec ca on pourra afficher le message de bienvenue + stocker le nom dans le local storage ; 
+
+let form = document.getElementById("form");
+document.getElementById("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let name = document.getElementById("name").value;
+    let horoscope = document.getElementById("horoscope")
+    
+    document.getElementById("welcome").textContent = "Bonjour " + name;
+    form.style.display = "none";
+    horoscope.style.display = "block";
+    stockageName(name)
+
+});
+
+const stockageName = (name) => {
+    localStorage.setItem("name", name)
+};
 
 
+
+// La fonction displayHoro permet d'afficher le résultat de la requête sur la page HTML avec le DOM. 
 
 function displayHoro(data){
     let horoscope = data.description;
@@ -63,35 +82,9 @@ function displayHoro(data){
 
 }
 
-// Requête à l'API pour obtenir l'horoscope. On transforme la réponse en format json, puis on met cette réponse dans une fonction displayHoro,
-// Si la requête est mal formulée on affiche un message d'erreur.
-// fetch('https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?token=mmEUtLATc8w_UNnHuR2&sign=scorpio&date=05-02-2023')
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data)
-//         displayHoro(data)
-//     })
-//     .catch(error => console.log('ERROR'))
 
 
 
-// La fonction displayHoro permet d'afficher le résultat de la requête sur la page HTML avec le DOM. 
-
-
-let form = document.getElementById("form");
-
-document.getElementById("form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    let name = document.getElementById("name").value;
-    let horoscope = document.getElementById("horoscope")
-    // localStorage.setItem("signe", signe.value);
-    document.getElementById("welcome").textContent = "Bonjour " + name;
-    form.style.display = "none";
-    console.log("coucou")
-    horoscope.style.display = "block";
-    console.log("yo")
-    stockageName(name)
-});
 
 // if(localStorage.getItem("name", "signe") != null) {
 //     form.style.display = "none" ;
@@ -100,11 +93,17 @@ document.getElementById("form").addEventListener("submit", function(event) {
 
 // if localStorage est rempli alors on cache le formulaire 
 
-const stockageName = (name) => {
-    localStorage.setItem("name", name)
-}
 
-const stockageSign = (sign) => {
-    localStorage.setItem("sign", sign)
-}
+// document.getElementById("form").addEventListener("submit", async function getItems(){
+    
+//     try {
+//         let nameFromStorage = await localStorage.getItem("name")
+//         console.log("inside function " + nameFromStorage)
+//         return nameFromStorage ; 
 
+//     } catch (error) { console.log(error) }
+
+
+// })
+
+// console.log("outside function " + nameFromStorage)
