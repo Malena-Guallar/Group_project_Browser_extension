@@ -139,3 +139,10 @@ button{
 
 }
 
+.google_search {
+    z-index : 2;
+    position: absolute;
+
+
+}
+
