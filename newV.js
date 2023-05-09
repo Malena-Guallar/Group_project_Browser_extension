@@ -9,8 +9,7 @@ function getLocalStorage(){
     } else { 
         let form = document.getElementById("form");
         form.style.display = "none";
-        let bonjour = document.getElementById("horoscope")
-        bonjour.style.display="block";
+
 
         displayHoro()
 
@@ -95,6 +94,10 @@ function displayHoro() {
 
     let name = localStorage.getItem("name")
     document.getElementById("welcome").textContent = "Bonjour " + name ;
+    let horoscopeDiv = document.getElementById("horoscope_container")
+    horoscopeDiv.style.display = "block"; 
+    let bonjour = document.getElementById("horoscope")
+    bonjour.style.display="block";
     
     getApiUrl()
 
@@ -111,7 +114,6 @@ function displayHoroData(data){
     horoscopeDiv.appendChild(para)
 
     form.style.display = "none";
-    horoscopeDiv.style.display = "block"; 
  
 
 }
