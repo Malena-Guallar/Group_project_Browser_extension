@@ -10,6 +10,7 @@ body {
     /* height : 100vh; */
     background-color: transparent;
     font-family: 'Poppins', sans-serif;
+    width: 100vw;
 }
 
 #bg_wrap {
@@ -26,6 +27,8 @@ body {
     position: absolute; 
     margin-top: 35vh;
     text-align: center;
+    width: 100%;
+    height: 50%;
 }
 
 
@@ -34,22 +37,20 @@ body {
     justify-content: center;
     padding: 3%;
     text-align: center;
-    margin: 10%;
+    margin-left: 6%;
     font-size: 50%;
     position: absolute; 
     width: 80vw;
     z-index : 2;
-
-
 }
 
 .welcome{
     text-align: center;
+    width: 100%;
     font-size: 300%;
     position: absolute; 
     z-index : 2;
     margin-top: 25vh;
-    margin-left: 40vw;
 }
 
 header {
@@ -104,6 +105,8 @@ header {
     z-index : 2;
     margin-top: 35vh;
     margin-left: 35vw;
+    background-color: transparent;
+
 }
 
 #form{
@@ -146,6 +149,5 @@ button{
 .google_search {
     z-index : 2;
     position: absolute;
-
-
 }
+
