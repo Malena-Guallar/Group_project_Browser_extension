@@ -14,7 +14,7 @@ body {
 
 
 .horoscope {
-    display: none;
+
     font-size: 175%;
     z-index : 2;
     position: absolute; 
