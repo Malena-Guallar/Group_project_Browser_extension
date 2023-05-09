@@ -30,10 +30,10 @@ let img = document.getElementById("icon")
 async function meteoFunc() {
     const meteoUrl = "http://api.weatherapi.com/v1/forecast.json?key=eeeec6c522cd48c7b7781438230405&q=Paris&days=5&aqi=no&alerts=no";
     const dataMeteo = await fetch(meteoUrl);
-    console.log(dataMeteo)
+
 
     let responseMeteo = await dataMeteo.json();
-    console.log(responseMeteo);
+
 
     temp.innerHTML = `${responseMeteo.current.temp_c}°`;
     ville.innerHTML = responseMeteo.location.name;

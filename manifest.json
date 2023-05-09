@@ -7,4 +7,5 @@
         "newtab":"index.html"
     },
     "permissions" :["storage"]
+
 }
