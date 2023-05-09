@@ -141,6 +141,11 @@ button{
     background-color: transparent;
     z-index : 2;
 
+}
+
+.google_search {
+    z-index : 2;
+    position: absolute;
 
 
 }

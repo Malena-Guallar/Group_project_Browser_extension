@@ -135,3 +135,19 @@ function welcome() {
 }
 
 
+
+
+function googleSearch(){
+    let form = document.getElementById('google_search_form');
+    let input = document.getElementById('search_input');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const query = input.value;
+        console.log(query)
+        const url = `https://duckduckgo.com/?q=${query}&va=b&t=hc&ia=web`;
+        console.log(url)
+        chrome.tabs.create({url}); 
+    })
+}
+googleSearch()
