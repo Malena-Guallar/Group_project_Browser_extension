@@ -1,6 +1,7 @@
 // AFFICHAGE DE L'HOROSCOPE SUR LA PAGE
 
 
+
 // Récupérer la date du jour et la mettre au bon format pour la requête API mm-jj-aaaa
 const date = new Date();
 let day = date.getDay();
@@ -49,7 +50,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
     let name = document.getElementById("name").value;
     let horoscope = document.getElementById("horoscope")
     
-    document.getElementById("welcome").textContent = "Bonjour " + name;
+    document.getElementById("welcome").textContent = "Bonjour " + name ;
     form.style.display = "none";
     horoscope.style.display = "block";
     stockageName(name)
