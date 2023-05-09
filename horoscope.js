@@ -134,36 +134,3 @@ console.log("outside function " + nameFromStorage)
 
 //     } catch (error) { console.log(error) }
 
-
-
-function welcome() {
-    const date = new Date();
-    const heure = date.getHours();
-    // Si matin
-    if (heure < 18)
-    {
-            document.getElementById("welcome").textContent = "Bonjour " + name;
-    } else
-    // Sinon soir
-    {
-            document.getElementById("welcome").textContent = "Bonsoir " + name;
-    }
-}
-
-
-
-
-function welcome() {
-    const date = new Date();
-    const heure = date.getHours();
-    // Si matin
-    if (heure < 18)
-    {
-            document.getElementById("welcome").textContent = "Bonjour " + name;
-    } else
-    // Sinon soir
-    {
-            document.getElementById("welcome").textContent = "Bonsoir " + name;
-    }
-}
-welcome()

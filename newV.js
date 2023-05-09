@@ -92,13 +92,14 @@ function getApiUrl(){
 function displayHoro() {
 
 
-    let name = localStorage.getItem("name")
-    document.getElementById("welcome").textContent = "Bonjour " + name ;
+    // let name = localStorage.getItem("name")
+    // document.getElementById("welcome").textContent = "Bonjour " + name ;
     let horoscopeDiv = document.getElementById("horoscope_container")
     horoscopeDiv.style.display = "block"; 
     let bonjour = document.getElementById("horoscope")
     bonjour.style.display="block";
-    
+
+    welcome()
     getApiUrl()
 
 }
@@ -117,3 +118,20 @@ function displayHoroData(data){
  
 
 }
+
+function welcome() {
+    let name = localStorage.getItem("name")
+    const date = new Date();
+    const heure = date.getHours();
+    // Si matin
+    if (heure < 18)
+    {
+            document.getElementById("welcome").textContent = "Bonjour " + name;
+    } else
+    // Sinon soir
+    {
+            document.getElementById("welcome").textContent = "Bonsoir " + name;
+    }
+}
+
+
