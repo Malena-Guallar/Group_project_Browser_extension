@@ -84,7 +84,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
     let name = document.getElementById("name").value;
     let horoscope = document.getElementById("horoscope")
     // localStorage.setItem("signe", signe.value);
-    document.getElementById("welcome").textContent = "Bonjour " + name;
+    // document.getElementById("welcome").textContent = "Bonjour " + name;
     form.style.display = "none";
     horoscope.style.display = "block";
     stockageName(name)
@@ -116,3 +116,21 @@ const stockageSign = (sign) => {
     localStorage.setItem("sign", sign)
 
 }
+
+
+
+
+function welcome() {
+    const date = new Date();
+    const heure = date.getHours();
+    // Si matin
+    if (heure < 18)
+    {
+            document.getElementById("welcome").textContent = "Bonjour " + name;
+    } else
+    // Sinon soir
+    {
+            document.getElementById("welcome").textContent = "Bonsoir " + name;
+    }
+}
+welcome()
