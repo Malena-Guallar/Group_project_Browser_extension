@@ -9,6 +9,10 @@ Then on its later visits, the user would find a welcoming message, the time and 
 
 During this project I mostly worked on the global architecture of the extension : creating a form and implementing functions to stock data in browser local storage, then displaying a custom page for each user. I customed the API requests with the data from local storage and the date, to display a horoscope that changes in accordance with the sign of the user, and of course changes everyday.
 
+### Tools and languages
+
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,svg,figma,git,github,vscode,postman)](https://skillicons.dev)
+
 
 ### Ressources
 
